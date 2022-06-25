@@ -1,0 +1,55 @@
+<mat-toolbar class="mat-elevation-z8">
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+  <!--<img src="https://chamados.interisk.com.br/image/logo-pequeno.png">-->
+  <img src="/src/app/pages/image/logo-pequeno.png">
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    <img
+      class="avatar mat-elevation-z8"
+      src="data:image/jpeg;base64,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"
+    />
+
+    <h4 class="name">Cliente</h4>
+    <p class="designation">Empresa</p>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" routerLink="/home">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/chamados">
+      <mat-icon>Chamados</mat-icon>
+      <span>Chamados</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/dashboard">
+      <mat-icon>Dashboard</mat-icon>
+      <span>Dashboard</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/about">
+      <mat-icon>logout</mat-icon>
+      <span>Sair</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" routerLink="/help">
+      <mat-icon>help</mat-icon>
+      <span>Help</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
